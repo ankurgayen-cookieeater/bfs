@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFS — Buddy For Study</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="bfs-header">
+    <img src="assets/logo.svg" class="logo" alt="BFS Logo"/>
+    <h1>BFS — Buddy For Study</h1>
+    <p class="subtitle">Your all-in-one student productivity & wellbeing companion.</p>
+  </header>
+
+  <!-- MAIN NAV -->
+  <nav class="bfs-nav">
+    <button class="nav-btn active" data-screen="taskSplitter">Task Splitter</button>
+    <button class="nav-btn" data-screen="studySprint">StudySprint</button>
+    <button class="nav-btn" data-screen="focusRoom">FocusRoom</button>
+    <button class="nav-btn" data-screen="carePack">CarePack</button>
+  </nav>
+
+  <!-- SCREENS WRAPPER -->
+  <main id="screen-container">
+
+    <!-- TASK SPLITTER SCREEN -->
+    <section id="taskSplitter" class="screen active">
+      <h2 class="screen-title">Break Down Your Assignment</h2>
+
+      <div class="card">
+        <label>Assignment Name</label>
+        <input type="text" id="task-input" placeholder="e.g., Write chemistry lab report">
+
+        <label>Deadline</label>
+        <input type="date" id="task-deadline">
+
+        <label>Difficulty</label>
+        <select id="task-level">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <button id="generate-task" class="primary-btn">Generate Steps</button>
+      </div>
+
+      <div id="task-output" class="output-area"></div>
+    </section>
+
+    <!-- STUDYSPRINT SCREEN -->
+    <section id="studySprint" class="screen">
+      <h2 class="screen-title">StudySprint Timer</h2>
+
+      <div class="timer-card">
+        <div id="timer-display">25:00</div>
+
+        <div class="timer-controls">
+          <button id="start-timer" class="primary-btn">Start</button>
+          <button id="reset-timer" class="ghost-btn">Reset</button>
+        </div>
+
+        <p class="mode-label">Mode: <span id="timer-mode">Focus</span></p>
+      </div>
+
+      <div id="reflection-box" class="reflection hidden">
+        <h3>Reflection</h3>
+        <textarea id="reflection-input" placeholder="What did you accomplish this cycle?"></textarea>
+        <button id="save-reflection" class="primary-btn">Save Reflection</button>
+      </div>
+    </section>
+
+    <!-- FOCUSROOM SCREEN -->
+    <section id="focusRoom" class="screen">
+      <h2 class="screen-title">Distraction-Free Focus Mode</h2>
+
+      <div id="focus-normal">
+        <p>Enter a completely distraction-free environment.</p>
+        <button id="enter-focus" class="primary-btn">Enter Focus Mode</button>
+      </div>
+
+      <div id="focus-active" class="focus-active hidden">
+        <h3>You are in Focus Mode</h3>
+        <p class="sub">Stay with your task — everything else is hidden.</p>
+
+        <div class="breathing-circle"></div>
+
+        <button id="exit-focus" class="ghost-btn">Exit Focus Mode</button>
+      </div>
+    </section>
+
+    <!-- CAREPACK SCREEN -->
+    <section id="carePack" class="screen">
+      <h2 class="screen-title">Your Daily CarePack</h2>
+
+      <button id="generate-care" class="primary-btn">Generate My Pack</button>
+
+      <div id="care-output" class="output-area"></div>
+    </section>
+
+  </main>
+
+<!-- Scripts -->
+<script src="utils/helpers.js"></script>
+<script src="utils/storage.js"></script>
+<script src="components/tasks.js"></script>
+<script src="components/timer.js"></script>
+<script src="components/focus.js"></script>
+<script src="components/carepack.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
